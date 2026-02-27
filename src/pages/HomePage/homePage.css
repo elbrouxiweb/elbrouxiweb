@@ -1,0 +1,17 @@
+.desktopOnly{ display: block; }
+.mobileOnly{ display: none; }
+
+@media (max-width: 900px){
+    .desktopOnly{ display: none; }
+    .mobileOnly{ display: block; }
+}
+
+.layout{
+    position: relative;
+}
+
+/* الخلفية (canvas) z-index: 0 أصلاً */
+.topFixed{ z-index: 12; position: fixed; left: 0; right: 0; top: 0; }
+.leftFixed, .rightFixed{ z-index: 10; }
+.centerScroll{ position: relative; z-index: 5; }
+.bottomFixed{ z-index: 12; position: fixed; left: 0; right: 0; bottom: 0; }

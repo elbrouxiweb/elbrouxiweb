@@ -1,0 +1,192 @@
+/* src/sections/Process/process.css */
+.process{
+    position: relative;
+    isolation: isolate;
+}
+
+.processWrap{
+    width: min(980px, 100%);
+
+
+}
+
+.processHead{
+    margin-bottom: 28px;
+}
+
+.processKicker{
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 0 0 10px;
+}
+
+.processTitle{
+    font-size: clamp(26px, 3.2vw, 44px);
+    line-height: 1.08;
+    margin: 0 0 10px;
+    font-weight: 800;
+}
+
+.processTitle span{
+    color: #ff2a2a;
+    text-shadow: 0 0 18px rgba(255,42,42,0.35);
+}
+
+.processSub{
+    margin: 0;
+    color: rgba(255,255,255,0.70);
+    max-width: 62ch;
+}
+
+/* ✅ animated cyber bg (parallax via framer) */
+.processBg{
+    position: absolute;
+    inset: -40% -20%;
+    z-index: -1;
+    background:
+            radial-gradient(600px 320px at 18% 35%, rgba(255,42,42,0.16), transparent 60%),
+            radial-gradient(520px 300px at 82% 55%, rgba(0,255,170,0.10), transparent 60%),
+            linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 35%),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.055) 0 1px, transparent 1px 44px),
+            repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 44px);
+    filter: blur(0px);
+    mask-image: radial-gradient(circle at 50% 45%, black 40%, transparent 72%);
+    pointer-events: none;
+}
+
+/* layout grid */
+.processGrid{
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+/* vertical rail */
+.processRail{
+    position: relative;
+    height: 100%;
+    min-height: 520px;
+}
+
+.railTrack{
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.12);
+    border-radius: 999px;
+}
+
+.railFill{
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 2px;
+    height: calc(100% - 16px);
+    transform: translateX(-50%);
+    transform-origin: top;
+    background: linear-gradient(to bottom, #ff2a2a, rgba(255,42,42,0.15));
+    border-radius: 999px;
+    box-shadow: 0 0 18px rgba(255,42,42,0.35);
+}
+
+.railDot{
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: #ff2a2a;
+    box-shadow: 0 0 16px rgba(255,42,42,0.45);
+}
+
+.railDot.top{ top: 4px; }
+.railDot.bottom{ bottom: 4px; opacity: 0.35; }
+
+/* cards */
+.processSteps{
+    display: grid;
+    gap: 14px;
+}
+
+.processCard{
+    position: relative;
+    padding: 18px 18px 16px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.processCard::before{
+    content:"";
+    position:absolute;
+    inset: -1px;
+    background: radial-gradient(350px 120px at 18% 0%, rgba(255,42,42,0.22), transparent 60%);
+    opacity: .35;
+    pointer-events:none;
+}
+
+.processCard:hover{
+    transform: translateY(-4px);
+    border-color: rgba(255,42,42,0.35);
+    background: rgba(255,255,255,0.055);
+}
+
+.cardTop{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cardNum{
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+}
+
+.cardBadge{
+    font-size: 11px;
+    color: rgba(255,255,255,0.75);
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.cardTitle{
+    margin: 0 0 8px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.cardDesc{
+    margin: 0;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.55;
+    max-width: 70ch;
+}
+
+.cardLine{
+    margin-top: 14px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,42,42,0.55), transparent);
+    opacity: .6;
+}
+
+/* responsive */
+@media (max-width: 640px){
+    .process{ padding: 70px 0; }
+    .processGrid{ grid-template-columns: 18px 1fr; gap: 12px; }
+    .processRail{ min-height: 420px; }
+    .processCard{ padding: 16px; border-radius: 14px; }
+}

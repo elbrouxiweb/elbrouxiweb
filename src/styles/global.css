@@ -1,0 +1,49 @@
+:root{
+    --bg: #0e0f14;
+    --text: #f2f2f2;
+    --muted: #b5b5b5;
+
+    --red: #ff1c1c;
+
+    --radius: 18px;
+    --edge: 18px;
+
+    /* desktop/tablet */
+    --leftW: 320px;
+    --rightW: 84px;
+    --marqueeH: 40px;
+    --topH: 64px;
+
+    --gap: 18px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.5px;
+
+    overflow: hidden; /* ✅ مهم: الصفحة كاملة ما كتسكرولش */
+    overflow-x: hidden;
+}
+
+a{ color: inherit; text-decoration: none; }
+img{ max-width: 100%; display: block; height: auto; }
+
+html{
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+h1, h2, h3, .aboutTitle, .heroTitle{
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.5px;
+}

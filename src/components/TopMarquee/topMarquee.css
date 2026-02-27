@@ -1,0 +1,32 @@
+.topMarquee{
+    height: var(--marqueeH);
+    border-radius: 14px;
+    background: var(--red);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+.topTrack{
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+    white-space: nowrap;
+    padding-left: 18px;
+}
+
+.topItem{
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.sep{
+    margin-left: 20px;
+    opacity: 0.75;
+}

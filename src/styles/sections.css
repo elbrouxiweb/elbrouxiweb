@@ -1,0 +1,8 @@
+.section{
+    padding: 70px 0;
+}
+
+.muted{
+    color: var(--muted);
+    line-height: 1.7;
+}
