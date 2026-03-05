@@ -5,6 +5,8 @@ import "./projects.css";
 import ProjectPreviewModal from "../../components/ProjectPreviewModal/ProjectViewModal.tsx";
 
 import quadactivitiesImg from "../../assets/projects/quadactivites.png"
+import laroseastore from "../../assets/projects/laroseastore.jpg"
+import goheaddashboard from "../../assets/projects/goheaddashboard.jpg"
 
 
 type ProjectTag = "Websites" | "UI/UX" | "E-commerce" | "SEO";
@@ -44,24 +46,17 @@ const PROJECTS: Project[] = [
         year: "2026",
         status: "In progress",
         link: "#",
-    },
-    {
-        id: "p3",
-        title: "ElbrouxiWeb Portfolio",
-        desc: "Animated portfolio with fixed layout, motion sections, and responsive nav.",
-        tags: ["Websites", "UI/UX", "SEO"],
-        year: "2026",
-        status: "In progress",
-        link: "#",
+        image: laroseastore
     },
     {
         id: "p4",
-        title: "Nobty Dashboard",
+        title: "GoHead Dashboard",
         desc: "Admin dashboard UI concept: services, stats, export, and staff management.",
         tags: ["UI/UX", "Websites"],
         year: "2026",
         status: "Case study",
         link: "#",
+        image: goheaddashboard
     },
 ];
 

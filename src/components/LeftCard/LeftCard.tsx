@@ -21,7 +21,8 @@ export default function LeftCard() {
 
 
             <div className="contactInfo">
-                <p>+212 693 582 56</p>
+                <p>+212 728 41 97 35</p>
+                <p>+39 351 946 4481</p>
                 <p>contact@elbrouxiweb.com</p>
                 <p>Casablanca, Morocco | Turin, Italy</p>
             </div>

@@ -38,8 +38,8 @@ export default function Contact() {
                         <div className="infoRows">
                             <div className="infoRow">
                                 <span className="infoLabel">Phone</span>
-                                <a className="infoValue" href="tel:+21269358256">
-                                    +212 693 582 56
+                                <a className="infoValue" href="tel:+212728419735">
+                                    +212 728 41 97 35
                                 </a>
                             </div>
 
@@ -70,7 +70,7 @@ export default function Contact() {
                         </p>
 
                         <div className="infoActions">
-                            <a className="infoBtnPrimary" href="https://wa.me/21269358256" target="_blank" rel="noreferrer">
+                            <a className="infoBtnPrimary" href="https://wa.me/212728419735" target="_blank" rel="noreferrer">
                                 WhatsApp me
                             </a>
                             <a className="infoBtnGhost" href="mailto:contact@elbrouxiweb.com">
@@ -108,7 +108,7 @@ export default function Contact() {
 
                                 <label className="field">
                                     <span className="fieldLabel">Email</span>
-                                    <input className="fieldInput" type="email" placeholder="you@email.com" required />
+                                    <input className="fieldInput" type="email" placeholder="your@email.com" required />
                                 </label>
                             </div>
 
