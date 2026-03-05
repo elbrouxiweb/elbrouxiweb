@@ -8,7 +8,7 @@ export default function MobileNav() {
     return (
         <div className="mNav">
             <div className="mNavInner">
-                <div className="mLogo">LOGO</div>
+                <div className="mLogo">ElbrouxiWeb</div>
 
                 <button className="mBurger" onClick={() => setOpen((v) => !v)} aria-label="Menu">
                     <span />
