@@ -3,7 +3,7 @@ import LeftCard from "../../components/LeftCard/LeftCard";
 import RightMenu from "../../components/RightMenu/RightMenu";
 import MobileNav from "../../components/MobileNav/MobileNav";
 
-// import BackgroundFX from "../../components/BackgroundFX/BackgroundFX";
+import BackgroundFX from "../../components/BackgroundFX/BackgroundFX";
 
 import Hero from "../../sections/Hero/Hero";
 import "./homePage.css";
@@ -21,7 +21,7 @@ export default function HomePage() {
     return (
         <div className="layout">
             {/* ✅ خلفية الحشرة */}
-            {/*<BackgroundFX />*/}
+            <BackgroundFX />
 
             {/* ✅ Desktop: TopMarquee | ✅ Mobile: MobileNav */}
             <div className="topFixed">

@@ -2,17 +2,24 @@
 import {useEffect, useMemo, useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./projects.css";
+import ProjectPreviewModal from "../../components/ProjectPreviewModal/ProjectViewModal.tsx";
+
+import quadactivitiesImg from "../../assets/projects/quadactivites.png"
+
 
 type ProjectTag = "Websites" | "UI/UX" | "E-commerce" | "SEO";
 
 type Project = {
     id: string;
+    image?: string;
     title: string;
     desc: string;
     tags: ProjectTag[];
     year?: string;
     link?: string;
-    status?: "Live" | "Case study" | "In progress";
+    status?: "Live" | "Case study" | "In progress" | "Case Uploading";
+    previewUrl?: string;
+
 };
 
 const FILTERS: ("All" | ProjectTag)[] = ["All", "Websites", "UI/UX", "E-commerce", "SEO"];
@@ -20,12 +27,14 @@ const FILTERS: ("All" | ProjectTag)[] = ["All", "Websites", "UI/UX", "E-commerce
 const PROJECTS: Project[] = [
     {
         id: "p1",
-        title: "CoffeshopBachir",
+        title: "Quad Activities",
         desc: "Cyber landing + product storytelling. High-converting structure and clean UI.",
         tags: ["Websites", "UI/UX"],
         year: "2026",
-        status: "Case study",
+        status: "Case Uploading",
         link: "#",
+        previewUrl: "https://neon-maamoul-f907cb.netlify.app/",
+        image: quadactivitiesImg
     },
     {
         id: "p2",
@@ -57,6 +66,19 @@ const PROJECTS: Project[] = [
 ];
 
 export default function Projects() {
+
+    const [open,setOpen] = useState(false)
+    const [url,setUrl] = useState<string | null>(null)
+
+    const openPreview = (link:string)=>{
+        setUrl(link)
+        setOpen(true)
+    }
+
+    const closePreview = ()=>{
+        setOpen(false)
+        setUrl(null)
+    }
 
     useEffect(() => {
         document.title = "Projects | ElbrouxiWeb";
@@ -145,18 +167,20 @@ export default function Projects() {
                                 </div>
 
                                 {/* Thumbnail (placeholder) */}
-                                <div className="projectThumb" aria-hidden="true">
-                                    <div className="thumbGrid" />
-                                    <div className="thumbScan" />
+                                <div className="projectThumb">
+                                    {p.image && <img src={p.image} alt={p.title} />}
                                 </div>
 
                                 <h3 className="projectTitle">{p.title}</h3>
                                 <p className="projectDesc">{p.desc}</p>
 
                                 <div className="projectActions">
-                                    <a className="projectBtnPrimary" href={p.link || "#"} target="_blank" rel="noreferrer">
-                                        View
-                                    </a>
+                                    <button
+                                        className="projectBtnPrimary"
+                                        onClick={()=>openPreview(p.previewUrl || "")}
+                                    >
+                                        Preview
+                                    </button>
                                     <a className="projectBtnGhost" href="#contact">
                                         Request similar
                                     </a>
@@ -166,6 +190,11 @@ export default function Projects() {
                     </AnimatePresence>
                 </motion.div>
             </div>
+            <ProjectPreviewModal
+                open={open}
+                url={url}
+                onClose={closePreview}
+            />
         </section>
     );
 }
